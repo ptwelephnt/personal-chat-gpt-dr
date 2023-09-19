@@ -1,0 +1,18 @@
+$sub-color: rgb(14, 17, 23);
+$main-color: rgb(118, 118, 118);
+$border-radius: 4px;
+$font-family: 'Mooli', 'Pacifico';
+body {
+  background-color: $sub-color;
+}
+* {
+  font-family: $font-family;
+}
+#app {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 80vw;
+  height: 90vh;
+}

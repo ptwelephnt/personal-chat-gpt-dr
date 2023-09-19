@@ -1,0 +1,40 @@
+$sub-color: rgb(14, 17, 23);
+$main-color: rgb(40, 40, 40);
+$border-radius: 4px;
+$font-size: 16px;
+
+.personal-chat-gpt {
+
+    .side-bar-toggle {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: gray;
+        font-weight: 900;
+        font-size: larger;
+        cursor: pointer;
+    }
+    .main-page {
+        .main-header {
+            color: white;
+        }
+        .question-container {
+            display: flex;
+            flex-direction: column;
+            .question-label {
+                color: white;
+                text-align: left;
+            }
+            .question-input {
+                border-radius: $border-radius;
+                font-size: 20px;
+                background-color: $main-color;
+                border: none;
+                caret-color: white;
+                color: white;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+

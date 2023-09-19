@@ -1,0 +1,16 @@
+{
+  "status": "done",
+  "assets": {
+    "frontend.js": {
+      "name": "frontend.js",
+      "path": "/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/static/frontend/frontend.js",
+      "publicPath": "static/frontend/frontend.js"
+    }
+  },
+  "chunks": {
+    "frontend": [
+      "frontend.js"
+    ]
+  },
+  "publicPath": "static/frontend/"
+}

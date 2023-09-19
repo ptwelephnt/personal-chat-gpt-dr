@@ -1,0 +1,14 @@
+.authentication-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: space-between;
+    margin: 30px auto;
+
+    .auth-type-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+}

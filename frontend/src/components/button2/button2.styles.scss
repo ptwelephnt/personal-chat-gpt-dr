@@ -1,0 +1,14 @@
+$sub-color: rgb(14, 17, 23);
+$main-color: rgb(40, 40, 40);
+$border-radius: 4px;
+$font-size: 16px;
+.generic-button {
+    background-color: transparent;
+    color: white;
+    border: 1px white solid;
+    border-radius: $border-radius;
+}
+.generic-button:hover {
+    color: red;
+    border: 1px red solid;
+}

@@ -12,5 +12,7 @@
       "frontend.js"
     ]
   },
-  "publicPath": "static/frontend/"
+  "publicPath": "static/frontend/",
+  "error": "ModuleNotFoundError",
+  "message": "Module not found: Error: Can't resolve '../button-link/button-link.component' in '/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/src/components/side-bar'"
 }

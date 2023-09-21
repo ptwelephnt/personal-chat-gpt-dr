@@ -9,6 +9,7 @@ import { UserContext } from '../context/user.context.jsx';
 
 import './sign-in-form.styles.scss';
 import Button2 from '../button2/button2.component.jsx';
+import ButtonLink from '../button-link/button-link.component.jsx';
 
 const defaultFormFields = {
     email: '',
@@ -75,6 +76,7 @@ const SignInForm = ({ setValue }) => {
                 />
                 
                 <div className='buttons-container'>
+                    <ButtonLink to='/'><Button2>Back</Button2></ButtonLink>
                     <Button2 type='submit' onClick={handleSubmit}>Sign In</Button2>
                     {/* <Button2 type='button' onClick={signInWithGoogle}>Google Sign In</Button2> */}
                 </div>

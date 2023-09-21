@@ -182,5 +182,5 @@ WEBPACK_LOADER = {
 
 ##### SIMPLE_JWT SETTINGS #####
 SIMPLE_JWT = {
-    "TOKEN_OBTAIN_SERIALIZER": 'user_auth.serializers.MyTokenObtainPairSerializer',
+    "TOKEN_OBTAIN_SERIALIZER": 'user_auth.custom_token_auth.MyTokenObtainPairSerializer',
 }

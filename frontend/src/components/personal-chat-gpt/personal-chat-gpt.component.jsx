@@ -27,9 +27,9 @@ const PersonalChatGPT = () => {
 			<SideBar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar}>
 				<ModelSettingsForm />
 			</SideBar>
-			{/* Full Page */}
+			{/* Main Page */}
 			<div className="main-page">
-				<h3 className="main-header">LLM Question-Answering App</h3>
+				<h3 className="main-header">Personal Question-Answering AI</h3>
 				<div className="question-container">
 					<label className="question-label">Ask a question about the content of your file:</label>
 					<input className="question-input" type="text" value={question} onChange={handleQuestionChange} />

@@ -7,6 +7,9 @@ $font-size: 16px;
     color: white;
     border: 1px white solid;
     border-radius: $border-radius;
+    min-width: 50px;
+    min-height: 30px;
+    cursor: pointer;
 }
 .generic-button:hover {
     color: red;

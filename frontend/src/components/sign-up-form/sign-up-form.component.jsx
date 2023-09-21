@@ -6,6 +6,7 @@ import FormInput from '../form-input/form-input.component.jsx';
 
 import './sign-up-form.styles.scss';
 import Button2 from '../button2/button2.component.jsx';
+import ButtonLink from "../button-link/button-link.component.jsx";
 
 const defaultFormFields = {
     firstName: '',
@@ -24,6 +25,20 @@ const SignUpForm = ({ setValue }) => {
         setFormFields(defaultFormFields);
     }
 
+    const postUserData = async () => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/authenticate/create-user/', userData)
+            resetFormFields();
+            console.log(response.data)
+        } catch(error) {
+            if(error.code === 'auth/email-already-in-use') {
+                alert('Cannot create user, email already in use');
+            } else {
+                console.log('user creation encountered an error', error);
+            }
+        }   
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -32,28 +47,10 @@ const SignUpForm = ({ setValue }) => {
             return;
         }
 
-        setUserData({first_name: firstName, last_name: lastName, email: email, password: password, api_key: apiKey})
-
-
+        setUserData({first_name: firstName, last_name: lastName, email: email, password: password, api_key: apiKey});
+        postUserData();
     };
 
-    useEffect(() => {
-        const postUserData = async () => {
-            try {
-                const response = await axios.post('http://127.0.0.1:8000/authenticate/create-user/', userData)
-                resetFormFields();
-                console.log(response.data)
-            } catch(error) {
-                if(error.code === 'auth/email-already-in-use') {
-                    alert('Cannot create user, email already in use');
-                } else {
-                    console.log('user creation encountered an error', error);
-                }
-            }   
-        }
-
-        postUserData()
-    }, [userData])
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -119,7 +116,10 @@ const SignUpForm = ({ setValue }) => {
                     name='apiKey'
                     value={apiKey}
                 />
-                <Button2 type='submit' onClick={handleSubmit}>Sign Up</Button2>
+                <div className="buttons-container">
+                    <ButtonLink to='/'><Button2>Back</Button2></ButtonLink>
+                    <Button2 type='submit' onClick={handleSubmit}>Sign Up</Button2>
+                </div>
             </form>
         </div>
     )

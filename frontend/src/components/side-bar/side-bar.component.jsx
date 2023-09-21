@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './side-bar.styles.scss'
+import ButtonLink from "../button-link/button-link.component.jsx";
+import Button2 from "../button2/button2.component.jsx";
 
 const SideBar = ({ openSideBar, setOpenSideBar,children}) => {
     
@@ -13,7 +15,8 @@ const SideBar = ({ openSideBar, setOpenSideBar,children}) => {
             animate={{ width: openSideBar ? "50vw" : 0 }}
             transition={{ duration: 0.5 }}>
             <div className="top-buttons-container">
-                <Link className='sign-in-link' to='/sign-in'>Sign In</Link>
+                <ButtonLink className='sign-in-link' to='/sign-in'><Button2>Sign In</Button2></ButtonLink>
+                {/*<Link className='sign-in-link' to='/sign-in'>Sign In</Link>*/}
                 <button
                     className="side-bar-close-button"
                     onClick={() => {

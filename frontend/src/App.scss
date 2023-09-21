@@ -1,13 +1,28 @@
 $sub-color: rgb(14, 17, 23);
-$main-color: rgb(118, 118, 118);
+$main-color: rgb(40, 40, 40);
 $border-radius: 4px;
 $font-family: 'Mooli', 'Pacifico';
+
 body {
   background-color: $sub-color;
+  scrollbar-color: $main-color $sub-color;
 }
+
+body::-webkit-scrollbar {
+  background-color: $sub-color;
+  border-radius: 10px;
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+  border-radius: 10px;
+}
+
 * {
   font-family: $font-family;
 }
+
 #app {
   max-width: 80vw;
   margin: 0 auto;

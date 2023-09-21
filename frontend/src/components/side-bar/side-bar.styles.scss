@@ -13,21 +13,14 @@ $font-size: 16px;
     flex-direction: column;
     font-size: $font-size;
     color: white;
+    scrollbar-color: $sub-color;
 
     .top-buttons-container {
         display: flex;
         justify-content: space-between;
         .sign-in-link {
-            background-color: $main-color;
-            color: white;
-            border: 1px white solid;
-            border-radius: $border-radius;
             margin: 10px;
             padding: 5px 10px;
-        }
-        .sign-in-link:hover {
-            color: red;
-            border: 1px red solid;
         }
         
         .side-bar-close-button{
@@ -40,4 +33,8 @@ $font-size: 16px;
             cursor: pointer;
         }   
     }
+}
+
+.side-bar::-webkit-scrollbar {
+    background-color: $main-color;
 }

@@ -12,6 +12,7 @@ class CustomUser(AbstractUser):
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
     api_key = models.CharField(max_length=60, blank=True)
+    username = None
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

@@ -21,23 +21,33 @@ const SignUpForm = ({ setValue }) => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { firstName, lastName, email, password, confirmPassword, apiKey } = formFields;
     const [userData, setUserData] = useState({})
+
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
-
-    const postUserData = async () => {
-        try {
-            const response = await axios.post('http://127.0.0.1:8000/authenticate/create-user/', userData)
-            resetFormFields();
-            console.log(response.data)
-        } catch(error) {
-            if(error.code === 'auth/email-already-in-use') {
-                alert('Cannot create user, email already in use');
-            } else {
-                console.log('user creation encountered an error', error);
-            }
-        }   
-    }
+    
+    useEffect(() => {
+        const postUserData = async () => {
+            try {
+                const response = await axios.post('http://127.0.0.1:8000/authenticate/create-user/', userData)
+                resetFormFields();
+                console.log(response.data)
+            } catch(error) {
+                if(error.code === 'auth/email-already-in-use') {
+                    alert('Cannot create user, email already in use');
+                } else {
+                    console.log('user creation encountered an error', error);
+                }
+            }   
+        }
+        if (Object.getOwnPropertyNames(userData).length > 0) {
+            postUserData();
+            setValue('sign-in')
+        } else {
+            console.log(Object.getOwnPropertyNames(userData))
+        }
+    }, [userData])
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -48,9 +58,7 @@ const SignUpForm = ({ setValue }) => {
         }
 
         setUserData({first_name: firstName, last_name: lastName, email: email, password: password, api_key: apiKey});
-        postUserData();
     };
-
 
     const handleChange = (event) => {
         const { name, value } = event.target;

@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 AUTH_USER_MODEL = 'user_auth.CustomUser'
-
+AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
 
 # Application definition
 
@@ -183,4 +183,5 @@ WEBPACK_LOADER = {
 ##### SIMPLE_JWT SETTINGS #####
 SIMPLE_JWT = {
     "TOKEN_OBTAIN_SERIALIZER": 'user_auth.custom_token_auth.MyTokenObtainPairSerializer',
+    "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
 }

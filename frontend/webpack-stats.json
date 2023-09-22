@@ -14,5 +14,5 @@
   },
   "publicPath": "static/frontend/",
   "error": "ModuleNotFoundError",
-  "message": "Module not found: Error: Can't resolve '../button-link/button-link.component' in '/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/src/components/side-bar'"
+  "message": "Module not found: Error: Can't resolve '../context/modelSettings.context' in '/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/src/components/personal-chat-gpt'"
 }

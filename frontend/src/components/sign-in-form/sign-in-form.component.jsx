@@ -5,6 +5,8 @@ import axios from 'axios'
 import FormInput from '../form-input/form-input.component.jsx';
 
 import { UserContext } from '../context/user.context.jsx';
+import { ModelSettingsContext } from "../context/modelSettings.context.jsx";
+import { useNavigate } from "react-router-dom";
 
 
 import './sign-in-form.styles.scss';
@@ -19,19 +21,25 @@ const defaultFormFields = {
 const SignInForm = ({ setValue }) => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const { setCurrentUser } = useContext(UserContext);
+    const { setOpenAiAPIKey } = useContext(ModelSettingsContext);
+    const navigate = useNavigate()
 
-    // const { setCurrentUser } = useContext(UserContext);
-
-    // const resetFormFields = () => {
-    //     setFormFields(defaultFormFields);
-    // }
+    const resetFormFields = () => {
+        setFormFields(defaultFormFields);
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const response = await axios.post('/api/token/', {email: email, password: password});
-            console.log(response.data)
+            const user = response.data.user;
+            const ApiKey = response.data.api_key;
+            setCurrentUser(user);
+            setOpenAiAPIKey(ApiKey)
+            resetFormFields();
+            navigate('/');
         } catch(error) {
             switch(error.code) {
                 case 'auth/wrong-password':

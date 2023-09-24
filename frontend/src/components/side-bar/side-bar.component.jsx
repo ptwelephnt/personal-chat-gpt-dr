@@ -22,7 +22,7 @@ const SideBar = ({ openSideBar, setOpenSideBar,children}) => {
         <motion.div
             className="side-bar"
             initial={{ width: 0 }}
-            animate={{ width: openSideBar ? "35vw" : 0 }}
+            animate={{ width: openSideBar ? "45vw" : 0 }}
             transition={{ duration: 0.5 }}>
             <div className="top-buttons-container">
                 {currentUser ? <Button2 className='sign-out-button' onClick={signOutClick}>Sign Out</Button2> : <ButtonLink className='sign-in-link' to='/sign-in'><Button2>Sign In</Button2></ButtonLink>}

@@ -8,6 +8,7 @@ import Dropdown from "../dropdown/dropdown.component.jsx";
 import IncrimentingInput from "../incrimenting-input/incrimenting-input.component.jsx";
 import Slider from "../slider/slider.component.jsx";
 import Button2 from "../button2/button2.component.jsx";
+import UrlLoader from "../url-loader/url-loader.component.jsx";
 
 import './model-settings-form.styles.scss'
 
@@ -48,7 +49,7 @@ const ModelSettingsForm = () => {
                         </div>
                     ))}                
                 </div>
-                {radioValue === 'File' ? '' : radioValue == 'URL' ? '' : ''}
+                {radioValue === 'File' ? '' : radioValue == 'URL' ? <UrlLoader />: ''}
                 <div className="file-upload">{/* insert upload */}</div>
                 <Dropdown options={modelOptions} name='modelName' value={modelName} setValue={setModelName} />
                 <IncrimentingInput label='Chunk Size' min={100} max={2048} defaultValue={512} value={chunkSize} setValue={setChunkSize} />

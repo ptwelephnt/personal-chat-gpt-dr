@@ -1,22 +1,24 @@
 import React, { useEffect } from "react";
 import { useState, useContext } from "react";
 import { UserContext } from "../context/user.context.jsx";
+
 import ModelSettingsForm from "../model-settings-form/model-settings-form.component.jsx";
 import SideBar from "../side-bar/side-bar.component.jsx";
+
 import "./personal-chat-gpt.styles.scss";
 const PersonalChatGPT = () => {
 	const [openSideBar, setOpenSideBar] = useState(false);
 	const [question, setQuestion] = useState('');
-	const { user } = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 	const [name, setName]= useState('Personal')
 
 	useEffect(() => {
-		if (user === '') {
-			return
+		if (currentUser === undefined | currentUser === null | currentUser === '') {
+			setName('Personal')
 		} else {
-			setName(`${user}'s`)
+			setName(`${currentUser}'s`)
 		}
-	}, [user])
+	}, [currentUser])
 
 	const handleQuestionChange = (event) => {
 		const { value } = event.target
@@ -32,7 +34,9 @@ const PersonalChatGPT = () => {
 				onClick={() => {
 					setOpenSideBar(!openSideBar);
 				}}>
-				{">>"}
+				<hr></hr>
+				<hr></hr>
+				<hr></hr>
 			</div>
 			<SideBar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar}>
 				<ModelSettingsForm />

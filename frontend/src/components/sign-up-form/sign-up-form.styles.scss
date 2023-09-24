@@ -1,3 +1,7 @@
+$sub-color: rgb(14, 17, 23);
+$main-color: rgb(40, 40, 40);
+$border-radius: 4px;
+$font-size: 16px;
 .sign-up-container {
     display: flex;
     flex-direction: column;
@@ -5,6 +9,34 @@
 
     h2 {
         margin: 10px 0;
+    }
+
+    .password-tooltip {
+        width: 100%;
+        .tooltip-text {
+            background-color: $sub-color;
+            color: white;
+            width: 380px;
+            height: fit-content;
+            position: absolute;
+            z-index: 1;
+            border-radius: $border-radius;
+            margin-top: -5px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(-100%);
+            .check-mark-img {
+                width: 50;
+                height: 50;
+            }
+        }
+        .tooltip-text.hidden {
+            visibility: hidden;
+        }
+        .tooltip-text.visible {
+            visibility: visible;
+        }
     }
 
     .sign-in-link {

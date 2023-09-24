@@ -1,7 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 from .models import CustomUser
-from django.contrib.auth import get_user_model
 
 class TestSerializer(serializers.ModelSerializer):
     class Meta:

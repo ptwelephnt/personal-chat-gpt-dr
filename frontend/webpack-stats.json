@@ -1,6 +1,16 @@
 {
   "status": "done",
   "assets": {
+    "62c51e37a55cff98abd8.svg": {
+      "name": "62c51e37a55cff98abd8.svg",
+      "path": "/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/static/frontend/62c51e37a55cff98abd8.svg",
+      "publicPath": "static/frontend/62c51e37a55cff98abd8.svg"
+    },
+    "aa375b43701eb8ea6adc.svg": {
+      "name": "aa375b43701eb8ea6adc.svg",
+      "path": "/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/static/frontend/aa375b43701eb8ea6adc.svg",
+      "publicPath": "static/frontend/aa375b43701eb8ea6adc.svg"
+    },
     "frontend.js": {
       "name": "frontend.js",
       "path": "/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/static/frontend/frontend.js",
@@ -12,7 +22,5 @@
       "frontend.js"
     ]
   },
-  "publicPath": "static/frontend/",
-  "error": "ModuleNotFoundError",
-  "message": "Module not found: Error: Can't resolve '../context/modelSettings.context' in '/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/src/components/personal-chat-gpt'"
+  "publicPath": "static/frontend/"
 }

@@ -12,7 +12,7 @@ $border-radius: 4px;
     .dropdown {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 25vw;
         background-color: $sub-color;
         border-radius: $border-radius;
         padding: 5px;
@@ -28,11 +28,11 @@ $border-radius: 4px;
         flex-direction: column;
         align-items: flex-start;
         background-color: $sub-color;
-        width: 100%;
+        width: 25vw;
         height: fit-content;
         border-radius: $border-radius;
         .model-option {
-            width: 100%;
+            width: 25vw;
             overflow: hidden;
             cursor: pointer;
             background-color: $sub-color;

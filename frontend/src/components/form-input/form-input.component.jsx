@@ -5,7 +5,7 @@ import './form-input.styles.scss';
 const FormInput = ({ label, ...otherProps }) => {
     return(
         <div className="group">
-            <input className={`form-input ${otherProps.colormode === 'dark' ? 'dark' : ''}`} {...otherProps}  />
+            <input className={`form-input ${otherProps.classes}`} {...otherProps}  />
             {label && (
                 <label
                     className={`${

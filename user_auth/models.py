@@ -1,10 +1,10 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 from django.utils import timezone
 
 from .managers import CustomUserManager
 
-class CustomUser(AbstractUser):
+class CustomUser(AbstractBaseUser):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)

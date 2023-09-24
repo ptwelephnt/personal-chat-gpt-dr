@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useContext } from 'react';
-import axios from 'axios'
-import FormInput from '../form-input/form-input.component.jsx';
-
 import { UserContext } from '../context/user.context.jsx';
 import { ModelSettingsContext } from "../context/modelSettings.context.jsx";
 import { useNavigate } from "react-router-dom";
 
+import axios from 'axios'
 
-import './sign-in-form.styles.scss';
+import FormInput from '../form-input/form-input.component.jsx';
 import Button2 from '../button2/button2.component.jsx';
 import ButtonLink from '../button-link/button-link.component.jsx';
+import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
     email: '',
@@ -34,7 +33,7 @@ const SignInForm = ({ setValue }) => {
 
         try {
             const response = await axios.post('/api/token/', {email: email, password: password});
-            const user = response.data.user;
+            const user = response.data.name;
             const ApiKey = response.data.api_key;
             setCurrentUser(user);
             setOpenAiAPIKey(ApiKey)

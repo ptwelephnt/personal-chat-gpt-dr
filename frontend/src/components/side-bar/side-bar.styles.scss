@@ -4,10 +4,11 @@ $border-radius: 4px;
 $font-size: 16px;
 .side-bar {
     position: fixed;
-    overflow-y: scroll;
+    overflow-x: hidden;
     top: 0;
     bottom: 0;
     left: 0;
+    width: fit-content;
     background-color: $main-color;
     display: flex;
     flex-direction: column;
@@ -22,6 +23,10 @@ $font-size: 16px;
             margin: 10px;
             padding: 5px 10px;
         }
+        .sign-out-button {
+            margin: 10px;
+            padding: 5px 10px;           
+        }
         
         .side-bar-close-button{
             background: none;
@@ -31,10 +36,18 @@ $font-size: 16px;
             font-size: larger;
             width: fit-content;
             cursor: pointer;
+            margin: 10px;
+            padding: 5px 10px;
         }   
     }
 }
 
 .side-bar::-webkit-scrollbar {
     background-color: $main-color;
+    border-radius: 10px;
+}
+   
+.side-bar::-webkit-scrollbar-thumb {
+background-color: $sub-color;
+border-radius: 10px;
 }

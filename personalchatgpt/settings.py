@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -182,6 +183,9 @@ WEBPACK_LOADER = {
 
 ##### SIMPLE_JWT SETTINGS #####
 SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ALGORITHM": 'HS256',
     "TOKEN_OBTAIN_SERIALIZER": 'user_auth.custom_token_auth.MyTokenObtainPairSerializer',
     "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
 }

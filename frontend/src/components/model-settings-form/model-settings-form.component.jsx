@@ -1,12 +1,15 @@
 import React from "react";
+import { useContext, useState } from "react";
+import { Fragment } from "react";
+
+import { ModelSettingsContext } from "../context/modelSettings.context.jsx";
 import FormInput from "../form-input/form-input.component.jsx";
 import Dropdown from "../dropdown/dropdown.component.jsx";
 import IncrimentingInput from "../incrimenting-input/incrimenting-input.component.jsx";
 import Slider from "../slider/slider.component.jsx";
-import './model-settings-form.styles.scss'
-import { useContext, useState } from "react";
-import { ModelSettingsContext } from "../context/modelSettings.context.jsx";
 import Button2 from "../button2/button2.component.jsx";
+
+import './model-settings-form.styles.scss'
 
 const modelOptions = ["gpt-3.5-turbo", "gpt-4"];
 const radioLabels = ['File', 'URL'];
@@ -25,7 +28,7 @@ const ModelSettingsForm = () => {
         console.log(openAiAPIKey, radioValue, modelName, chunkSize, kValue, temperature)
     }
     return (
-        <>
+        <Fragment>
             <form className="settings-form">
                 <FormInput
                     label="OpenAI API Key"
@@ -34,7 +37,7 @@ const ModelSettingsForm = () => {
                     onChange={handleAPIKeyChange}
                     name="openAiApiKey"
                     value={openAiAPIKey}
-                    colormode='dark'
+                    classes='apiKeyInput dark'
                 />
                 <div className="radio-container">
                     <label>Load Documents From...</label>
@@ -51,10 +54,9 @@ const ModelSettingsForm = () => {
                 <IncrimentingInput label='Chunk Size' min={100} max={2048} defaultValue={512} value={chunkSize} setValue={setChunkSize} />
                 <IncrimentingInput label='k' min={1} max={20} defaultValue={3} value={kValue} setValue={setKValue} />
                 <Slider label='Temperature' min={0.00} max={1.00} defaultValue={0.00} value={temperature} setValue={setTemperature} />
-                <Button2 onClick={submitForm}>Add Data</Button2>
+                <Button2 className='add-data-button' onClick={submitForm}>Add Data</Button2>
             </form>
-
-        </>
+        </Fragment>
     )
 }
 

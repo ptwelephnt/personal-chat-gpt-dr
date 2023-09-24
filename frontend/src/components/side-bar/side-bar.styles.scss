@@ -15,6 +15,7 @@ $font-size: 16px;
     font-size: $font-size;
     color: white;
     scrollbar-color: $sub-color;
+    z-index: 999;
 
     .top-buttons-container {
         display: flex;

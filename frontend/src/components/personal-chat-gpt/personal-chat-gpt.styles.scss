@@ -4,14 +4,14 @@ $border-radius: 4px;
 $font-size: 16px;
 
 .personal-chat-gpt {
-
+    height: 100%;
+    width: 100%;
+    position: absolute;
     .side-bar-toggle {
-        position: absolute;
-        top: 10px;
-        left: 10px;
+        position: fixed;
+        top: 5px;
+        left: 15px;
         width: 25px;
-        padding: 5px 5px;
-        margin: 5px;
         height: fit-content;
         color: gray;
         font-weight: 900;
@@ -19,25 +19,79 @@ $font-size: 16px;
         cursor: pointer;
     }
     .main-page {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .main-header {
             color: white;
         }
-        .question-container {
-            display: flex;
-            flex-direction: column;
-            .question-label {
-                color: white;
-                text-align: left;
+        .chat-container {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            top: 10%;
+            bottom: 0;
+
+            .question-container {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                .question-label {
+                    color: white;
+                    text-align: left;
+                }
+                .question-input {
+                    border-radius: $border-radius;
+                    font-size: 20px;
+                    background-color: $main-color;
+                    border: none;
+                    caret-color: white;
+                    color: white;
+                    padding-top: 5px;
+                }
             }
-            .question-input {
-                border-radius: $border-radius;
-                font-size: 20px;
-                background-color: $main-color;
-                border: none;
-                caret-color: white;
-                color: white;
-                margin-top: 5px;
-            }
+            .answer-container {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 15%;
+                .text-area {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: $main-color;
+                    color: white;
+                    text-align: left;
+                    border-radius: $border-radius;
+                    overflow-y: scroll;
+                    .answer {
+                        padding-bottom: 5px;
+                        padding-left: 5px;
+                        padding-top: 0px;
+                    }
+                }
+
+                .text-area::-webkit-scrollbar {
+                    background-color: $main-color;
+                    border-radius: 10px;
+                    width: 10px;
+                  }
+                  
+                  
+                  .text-area::-webkit-scrollbar-thumb {
+                    background-color: $sub-color;
+                    border-radius: 10px;
+                  }
+            }            
         }
     }
 }

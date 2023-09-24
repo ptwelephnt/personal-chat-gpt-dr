@@ -22,5 +22,7 @@
       "frontend.js"
     ]
   },
-  "publicPath": "static/frontend/"
+  "publicPath": "static/frontend/",
+  "error": "ModuleNotFoundError",
+  "message": "Module not found: Error: Can't resolve 'prop-types' in '/home/psychictwelephnt/PersonalChatGPTDjangoReact/frontend/node_modules/react-lorem-ipsum/dist/lorem-ipsum'"
 }
